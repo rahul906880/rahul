@@ -2,7 +2,7 @@ create database bank_management;
 use bank_management;
 
 
--- Create the users table
+
 CREATE TABLE users (
     user_id INT AUTO_INCREMENT PRIMARY KEY,
     form_no VARCHAR(10) UNIQUE,
@@ -27,7 +27,7 @@ CREATE TABLE users (
     existing_account VARCHAR(3)
 );
 
--- Create the accounts table
+
 CREATE TABLE accounts (
     account_id INT AUTO_INCREMENT PRIMARY KEY,
     user_id INT,
@@ -37,7 +37,7 @@ CREATE TABLE accounts (
     FOREIGN KEY (user_id) REFERENCES users(user_id)
 );
 
--- Create the login table
+
 CREATE TABLE login (
     account_id INT,
     card_number VARCHAR(16) UNIQUE,
@@ -45,7 +45,7 @@ CREATE TABLE login (
     FOREIGN KEY (account_id) REFERENCES accounts(account_id)
 );
 
--- Create the transactions table
+
 CREATE TABLE transactions (
     transaction_id INT AUTO_INCREMENT PRIMARY KEY,
     account_id INT,
@@ -58,10 +58,10 @@ ALTER TABLE accounts ADD COLUMN facilities VARCHAR(255);
 ALTER TABLE accounts ADD CONSTRAINT positive_balance CHECK (balance >= 0);
 USE bank_management;
 
--- Adding index on users.form_no (already UNIQUE, but explicit index for clarity)
+
 CREATE INDEX idx_users_form_no ON users (form_no);
 
--- Adding index on login.card_number (already UNIQUE, but explicit index for clarity)
+
 CREATE INDEX idx_login_card_number ON login (card_number);
 SHOW INDEXES FROM users;
 SHOW INDEXES FROM login;
