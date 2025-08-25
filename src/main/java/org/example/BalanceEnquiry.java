@@ -47,13 +47,10 @@ public class BalanceEnquiry extends JFrame implements ActionListener {
         setLocation(275, 5);
         setVisible(true);
 
-        // Perform balance query asynchronously
         JDialog processingDialog = new JDialog(this,"Processing", true);
         processingDialog.setLayout(new BorderLayout());
         processingDialog.add(new JLabel("Processing...",SwingConstants.CENTER), BorderLayout.CENTER);
-        // processingDialog.setSize(200, 100);
         processingDialog.setBounds(602,270,200,100);
-        //processingDialog.setLocationRelativeTo(this);
         processingDialog.setDefaultCloseOperation(JDialog.DO_NOTHING_ON_CLOSE);
 
         SwingWorker<Double, Void> worker = new SwingWorker<Double, Void>() {
