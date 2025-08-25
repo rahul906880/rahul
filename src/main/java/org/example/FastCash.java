@@ -80,13 +80,12 @@ public class FastCash extends JFrame implements ActionListener {
         try {
             double amount = Double.parseDouble(amountStr);
 
-            // Show processing dialog
             JDialog processingDialog = new JDialog(this,"Processing", true);
             processingDialog.setLayout(new BorderLayout());
             processingDialog.add(new JLabel("Processing...",SwingConstants.CENTER), BorderLayout.CENTER);
-           // processingDialog.setSize(200, 100);
+          
             processingDialog.setBounds(602,270,200,100);
-            //processingDialog.setLocationRelativeTo(this);
+          
             processingDialog.setDefaultCloseOperation(JDialog.DO_NOTHING_ON_CLOSE);
 
             SwingWorker<Void, Void> worker = new SwingWorker<Void, Void>() {
