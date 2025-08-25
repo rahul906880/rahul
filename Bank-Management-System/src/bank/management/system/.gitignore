@@ -1,0 +1,28 @@
+# Ignore IntelliJ IDEA project files
+.idea/
+*.iml
+
+# Ignore compiled Java output
+out/
+bin/
+build/
+
+# Ignore system-specific files
+.DS_Store
+Thumbs.db
+
+# Ignore JDK or library folders
+jdk*/
+*.jar
+*.zip
+*.exe
+*.iso
+*.tar.gz
+# Ignore large data files (like the one you had)
+Car_Details.csv
+
+# Ignore log files or temp files
+*.log
+*.tmp
+
+
